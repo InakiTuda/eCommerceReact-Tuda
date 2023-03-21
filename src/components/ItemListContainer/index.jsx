@@ -1,7 +1,7 @@
 import React from 'react';
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import arrayProductos from "/arrayProductos.json";
+import arrayProductos from "../../json/arrayProductos.json";
 import ItemList from "../ItemList";
 
 const ItemListContainer = () => {
