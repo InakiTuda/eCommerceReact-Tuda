@@ -9,20 +9,19 @@ const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
     const {id} = useParams();
 
-    useEffect(() =>{
-        const getProduct = () => {
-            return new Promise((resolve) => {
-                const productoFiltrado  = arrayProductos.find(p => p.id === parseInt(id))
-                setTimeout(() => {
-                    resolve(productoFiltrado)
-                }, 2000)
-            })
-          }
-        
-        getProduct.then((id) => {
-            setItem(id);
+    useEffect(() => {
+        const promesa = new Promise((resolve) => {
+            console.log(id);
+            setTimeout(() => {
+                resolve(arrayProductos.find(item => item.id  === parseInt(id)))
+            }, 2000);
+        }, []);
+
+        promesa.then((data) => {
+            setItem(data);
         })
-    },[id])
+
+    }, [id])
 
     return(
         <div className="container">
