@@ -1,4 +1,3 @@
-import "./ItemCount.css";
 import React,{useState} from "react";
 
 const ItemCount = ({stockItems}) => {
@@ -27,16 +26,16 @@ const ItemCount = ({stockItems}) => {
     return (
         <div className="container" id="itemcount">
             <div className="row mb-3">
-                <div className="col-md-2">
+                <div className="">
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
-                        <button type="button" className="btn btn-outline-primary" onClick={decreaseStock}>-</button>
-                        <button type="button" className="btn btn-outline-primary">{counter}</button>
-                        <button type="button" className="btn btn-outline-primary" onClick={increaseStock}>+</button>  
+                        <button type="button" className="btn btn-outline-danger" onClick={decreaseStock}>-</button>
+                        <button type="button" className="btn btn-outline-dark">{counter}</button>
+                        <button type="button" className="btn btn-outline-success" onClick={increaseStock}>+</button>  
                     </div>
                 </div>
             </div>
             <div className="row">
-                <div className="col-md-2">
+                <div className="align-items">
                     <button type="button" className="btn btn-outline-primary" onClick={onAdd}>Agregar al Carrito</button>
                 </div>
             </div>
