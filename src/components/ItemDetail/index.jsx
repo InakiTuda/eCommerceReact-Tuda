@@ -14,6 +14,7 @@ const ItemDetail = ({item}) => {
                 <ItemCount stockItems={10}/>
             </div>
             <div>
+                <br/>
                 <Link to="/">Volver al Inicio</Link>
             </div>
         </div>
