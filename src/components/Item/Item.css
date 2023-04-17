@@ -5,5 +5,22 @@
 }
 
 .card {
-    border: 1px solid red;
+    border: none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardItem {
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+    margin: 10px;
+
+}
+
+.cardImg {
+    height: 80%;
+}
+
+.detalles {
+    width: 100%;
 }
