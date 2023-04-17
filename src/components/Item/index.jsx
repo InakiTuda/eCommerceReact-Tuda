@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 const Item = ({item}) => {
     return (
             <div className="card">
-                <div className="card border border-0 ">
+                <div className="cardItem border border-0 ">
                     <img src={item.imagen} className="card-img-top" alt={item.nombre} />
                     <div className="card-body text-center">
                         <b className="card-text text-black text-uppercase">{item.nombre}</b>
@@ -12,10 +12,9 @@ const Item = ({item}) => {
                     </div>
                 </div>
                 <Link to={`/item/${item.id}`} className="card border text-decoration-none">
-                <button>Ver Detalle</button>
+                <button className="detalles">Ver Detalles</button>
                 </Link>
             </div>
-
     )
 }
 
