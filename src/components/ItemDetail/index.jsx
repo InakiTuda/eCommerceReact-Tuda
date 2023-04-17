@@ -1,17 +1,16 @@
+import '../ItemDetail/ItemDetail.css';
 import React from "react";
 import ItemCount from "../ItemCount";
 
 const ItemDetail = ({item}) => {
     return (
     <body>
-    <div className="row" id="itemdetail">
-        <div className="col-md-4 offset-md-4">
-            <img src={item.imagen} className="img-fluid" alt={item.nombre} />
-            <h1 className="title">{item.nombre}</h1>
-            <p className="price">${item.precio}</p> 
-            <div className="carrito">
-                <ItemCount stockItems={10}/>
-            </div>
+    <div className="item">
+        <div className="itemDetail">
+            <img src={item.imagen} className="itemImg" alt={item.nombre}/>
+            <h1 className="itemTitle">{item.nombre}</h1>
+            <p className="itemPrecio">${item.precio}</p> 
+            <div className="carrito"><ItemCount stockItems={10}/></div>
         </div>
     </div>
     </body>    

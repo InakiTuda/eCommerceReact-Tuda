@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import "./ItemCount.css"
+import "./ItemCount.css";
 
 const ItemCount = ({stockItems}) => {
     const [counter, setCounter] = useState(1);
@@ -31,13 +31,12 @@ const ItemCount = ({stockItems}) => {
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
                         <button type="button" className="btn btn-outline-danger" onClick={decreaseStock}>-</button>
                         <button type="button" className="btn btn-outline-dark">{counter}</button>
-                        <button type="button" className="btn btn-outline-success" onClick={increaseStock}>+</button>  
+                        <button type="button" className="btn btn-outline-success" onClick={increaseStock}>+</button>
+                        <button type="button" className="btn btn-outline-primary" onClick={onAdd}>
+                            <i className="bi bi-cart3"></i>
+                        </button>
+
                     </div>
-                </div>
-            </div>
-            <div className="row">
-                <div className="align-items">
-                    <button type="button" className="btn btn-outline-primary" onClick={onAdd}>Agregar al Carrito</button>
                 </div>
             </div>
         </div>
