@@ -1,24 +1,27 @@
 import React from 'react';
 import {useState, useEffect} from "react";
 import {useParams} from "react-router-dom";
-import arrayProductos from "../../json/arrayProductos.json";
+/*import arrayProductos from "../../json/arrayProductos.json";*/
 import ItemList from "../ItemList";
+import {getFirestore, collection, getDocs, where, query} from "firebase/firestore";
 
 const ItemListContainer = () => {
-    const [item, setItem] = useState([])
-    const {id} = useParams ();
 
-    useEffect(() => {
-        const  promesa = new Promise((resolve) => {
-             setTimeout(() => {
-                resolve(id ? arrayProductos.filter(item => item.categoria === id) : arrayProductos)
-            }, 2000)
-        });
-
-        promesa.then((data) => {
-            setItem(data)
-        })
-    },[id]);
+    const[item,setItem]= useState([]);
+    const{id}  = useParams();
+    
+    useEffect(()=>{
+      const queryDb = getFirestore();
+      const queryCollection = collection(queryDb, 'Items');
+      if(id){
+      const queryFilter = query(queryCollection, where('id', '==', id))
+      getDocs(queryFilter)
+      .then(res=>setItem(res.docs.map(p=>({id: p.id, ...p.item()}))))
+      }else{
+        getDocs(queryCollection)
+        .then(res=>setItem(res.docs.map(p=>({id: p.id, ...p.item()}))))
+      }
+       },[id])
 
     return (
         <div className="container">

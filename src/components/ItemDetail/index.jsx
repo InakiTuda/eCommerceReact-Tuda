@@ -4,7 +4,6 @@ import ItemCount from "../ItemCount";
 
 const ItemDetail = ({item}) => {
     return (
-    <body>
     <div className="item">
         <div className="itemDetail">
             <img src={item.imagen} className="itemImg" alt={item.nombre}/>
@@ -13,8 +12,7 @@ const ItemDetail = ({item}) => {
             <p className="itemPrecio">${item.precio}</p> 
             <div className="carrito"><ItemCount stockItems={item.stock}/></div>
         </div>
-    </div>
-    </body>    
+    </div> 
     )
 }
 
