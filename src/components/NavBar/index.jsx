@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link, NavLink} from 'react-router-dom';
 import CartWidget from "../CartWidget";
+import '../NavBar/NavBar.css';
 
 const NavBar = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
                 <div className="container-fluid">
-                    <img src="../logo.png" alt='' width="100"/>
+                    <img className="logo" src="/logo.png" alt='Logo IñaShop'/>
                     <button className="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

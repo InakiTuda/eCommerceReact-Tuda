@@ -13,7 +13,7 @@ const Item = ({item}) => {
                     </div>
                 </div>
                 <Link to={`/item/${item.id}`} className="text-decoration-none">
-                <button className="detalles">Ver Detalles</button>
+                <button className="detalles">Ver Productos</button>
                 </Link>
             </div>
     )
