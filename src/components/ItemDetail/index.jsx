@@ -1,12 +1,14 @@
 import '../ItemDetail/ItemDetail.css';
-import React from "react";
+import React, {useState} from "react";
 import ItemCount from "../ItemCount";
 import {Link} from "react-router-dom";
 
 const ItemDetail = ({item}) => {
+    const [goToCart, setGoToCart] = useState(false);
 
     const onAdd = (quantity) => {
         console.log(`Compraste ${quantity} unidades`);
+        setGoToCart(quantity);
     }
 
     return (
@@ -16,8 +18,11 @@ const ItemDetail = ({item}) => {
             <h1 className="itemTitle">{item.nombre}</h1>
             <p className='itemDescripcion'>{item.descripcion}</p>
             <p className="itemPrecio">${item.precio}</p> 
-                <Link to="/">Terminar Compra</Link>
-                <ItemCount initial={1} stockItems={item.stock} onAdd={onAdd}/>
+            {
+                goToCart
+                    ? <Link to="/Cart">Ir al Carrito</Link>
+                    : <ItemCount initial={1} stockItems={item.stock} onAdd={onAdd}/>
+            }
         </div>
     </div> 
     )

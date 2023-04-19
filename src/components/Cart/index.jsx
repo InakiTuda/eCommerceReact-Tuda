@@ -20,7 +20,7 @@ const Cart = () => {
 
     const handleClick = () => {
         const db = getFirestore();
-        const ordersCollection = collection(db, "orders");
+        const ordersCollection = collection(db, "Orders");
         addDoc(ordersCollection, order)
         .then(({id}) => console.log(id))
     }
@@ -44,3 +44,5 @@ const Cart = () => {
         </>
     )
 }
+
+export default Cart;
