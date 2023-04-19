@@ -17,6 +17,12 @@ const CartProvider = ({children}) => {
         }
     }
 
+    const totalPrice = () => {
+        return cart.reduce((prev, act) => prev + act.stock * act.precio, 0);
+    }
+
+    const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.quantity, 0);
+
     const clearCart = () => setCart([]);
 
     const isInCart = (id) => cart.find(product => product.id === id) ? true : false;
@@ -29,6 +35,9 @@ const CartProvider = ({children}) => {
             isInCart,
             removeProduct,
             addProduct,
+            totalPrice,
+            totalProducts,
+            cart,
         }}>
             {children}
         </CartContext.Provider>
