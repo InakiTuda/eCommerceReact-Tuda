@@ -40,7 +40,7 @@ const Cart = () => {
             <p>
                 Total: ${totalPrice()}
             </p>
-            <button onClick={handleClick}>Emitir Orden de Compra</button>
+            <button onClick={handleClick}><Link to={"/checkout"}>Finalizar Compra</Link></button>
         </>
     )
 }
